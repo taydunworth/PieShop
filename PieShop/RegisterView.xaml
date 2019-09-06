@@ -48,7 +48,9 @@
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Center"
                Placeholder="Enter Your Username"
-               WidthRequest="200" />
+               WidthRequest="200"
+               TextChanged="UsernameEntry_OnTextChanged"
+               x:Name="UsernameEntry" />
         <Label Text="Password"
                Grid.Row="3"
                Grid.Column="0"
@@ -62,7 +64,9 @@
                VerticalOptions="Center"
                Placeholder="Enter Your Password"
                IsPassword="True"
-               WidthRequest="200" />
+               WidthRequest="200"
+               TextChanged="PasswordEntry_OnTextChanged"
+               x:Name="PasswordEntry" />
         <Label Text="Birthday"
                Grid.Row="4"
                Grid.Column="0"
@@ -77,7 +81,7 @@
                MinimumDate="01/01/1900"
                MaximumDate="{x:Static sys:DateTime.Now}"
                WidthRequest="200"
-               x:Name="BirthDayDatePicker" />
+               x:Name="BirthdayDatePicker" />
         <Label Text="Preferred Delivery Time"
                Grid.Row="5"
                Grid.Column="0"
@@ -102,6 +106,8 @@
                 Padding="40, 10"
                 Margin="20"
                 TextColor="#fff"
-                FontSize="Large"/>
+                FontSize="Large"
+                Clicked="RegisterButton_OnClicked"
+                x:Name="RegisterButton" />
     </Grid>
 </ContentPage>
