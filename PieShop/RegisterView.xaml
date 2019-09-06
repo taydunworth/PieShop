@@ -2,8 +2,106 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PieShop.RegisterView">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="PieShop.RegisterView"
+    BackgroundImageSource="patternwide.png">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
+    </ContentPage.Padding>
+    <Grid VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="bethanylogo.png"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <Label Text="Register Now"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Large"
+               FontAttributes="Bold"/>
+        <Label Text="Username"
+               Grid.Row="2"
+               Grid.Column="0"
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="End"
+               FontSize="Medium" />
+        <Entry Grid.Row="2"
+               Grid.Column="1"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               Placeholder="Enter Your Username"
+               WidthRequest="200" />
+        <Label Text="Password"
+               Grid.Row="3"
+               Grid.Column="0"
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="End"
+               FontSize="Medium" />
+        <Entry Grid.Row="3"
+               Grid.Column="1"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               Placeholder="Enter Your Password"
+               IsPassword="True"
+               WidthRequest="200" />
+        <Label Text="Birthday"
+               Grid.Row="4"
+               Grid.Column="0"
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="End"
+               FontSize="Medium" />
+        <DatePicker Grid.Row="4"
+               Grid.Column="1"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               MinimumDate="01/01/1900"
+               MaximumDate="{x:Static sys:DateTime.Now}"
+               WidthRequest="200"
+               x:Name="BirthDayDatePicker" />
+        <Label Text="Preferred Delivery Time"
+               Grid.Row="5"
+               Grid.Column="0"
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="End"
+               FontSize="Medium" />
+        <TimePicker Grid.Row="5"
+               Grid.Column="1"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               Time="10:00"
+               WidthRequest="200"
+               x:Name="DeliveryTimePicker" />
+        <Button Text="Register"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center" 
+                VerticalOptions="Start"
+                BackgroundColor="#22cfa7"
+                Padding="40, 10"
+                Margin="20"
+                TextColor="#fff"
+                FontSize="Large"/>
+    </Grid>
 </ContentPage>

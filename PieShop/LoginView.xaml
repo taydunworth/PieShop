@@ -38,6 +38,7 @@
                Grid.Column="0"
                HorizontalOptions="EndAndExpand"
                VerticalOptions="Center"
+               HorizontalTextAlignment="End"
                FontSize="Medium" />
         <Entry Grid.Row="2"
                Grid.Column="1"
@@ -47,14 +48,16 @@
         <Label Text="Password"
                Grid.Row="3"
                Grid.Column="0"
-               FontSize="Medium"
                HorizontalOptions="EndAndExpand"
-               VerticalOptions="Center" />
+               VerticalOptions="Center"
+               HorizontalTextAlignment="End"
+               FontSize="Medium" />
         <Entry Grid.Row="3"
                Grid.Column="1"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Center"
-               Placeholder="Enter Your Password" />
+               Placeholder="Enter Your Password"
+               IsPassword="True" />
         <Button Text="Login"
                 Grid.Row="4"
                 Grid.Column="0"
