@@ -10,7 +10,7 @@ namespace PieShop
         {
             InitializeComponent();
 
-            MainPage = new MainView();
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()
