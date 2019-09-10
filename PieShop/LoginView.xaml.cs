@@ -11,5 +11,11 @@ namespace PieShop
         {
             InitializeComponent();
         }
+
+        private async void LoginButton_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.InsertPageBefore(new MainView(), this);
+            await Navigation.PopAsync();
+        }
     }
 }

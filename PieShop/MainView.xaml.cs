@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace PieShop
 {
-    public partial class MainView : ContentPage
+    public partial class MainView : MasterDetailPage
     {
         public MainView()
         {

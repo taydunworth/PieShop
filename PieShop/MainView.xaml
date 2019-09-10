@@ -1,9 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
+<MasterDetailPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PieShop.MainView">
-    <StackLayout>
-        <Label Text="Test" />
-    </StackLayout>
-</ContentPage>
+    xmlns:local="clr-namespace:PieShop;assembly=PieShop"
+    x:Class="PieShop.MainView"
+    Title="Bethany's Pie Shop">
+    <MasterDetailPage.Master>
+        <local:MasterPageNavigationListView x:Name="MasterView"></local:MasterPageNavigationListView>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:PieOverview></local:PieOverview>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

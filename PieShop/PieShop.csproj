@@ -16,9 +16,14 @@
   <ItemGroup>
     <EmbeddedResource Remove="WebPageView.xaml" />
     <EmbeddedResource Remove="PieDetailView.xaml" />
+    <EmbeddedResource Remove="VisitUsView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="WebPageView.xaml.cs" />
     <Compile Remove="PieDetailView.xaml.cs" />
+    <Compile Remove="VisitUsView.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
 </Project>
