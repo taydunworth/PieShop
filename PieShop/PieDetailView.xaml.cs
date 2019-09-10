@@ -1,28 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using PieShop.Model;
 using Xamarin.Forms;
 
 namespace PieShop
 {
     public partial class PieDetailView : ContentPage
     {
-        public PieDetailView()
+        public PieDetailView(Pie p)
         {
             InitializeComponent();
 
-            var pie = new Pie
-            {
-                Id = 1,
-                Description =
-                "Gingerbread jujubes donut. Gummies cake halvah. Jujubes candy canes pudding cupcake ice cream bonbon chocolate bar. Pudding apple pie carrot cake lollipop. Caramels sugar plum muffin croissant cake dragée carrot cake jelly-o cotton candy. Jelly beans chocolate pie bear claw donut sesame snaps. Carrot cake tart sweet gummies. Lollipop cotton candy muffin marshmallow chocolate bar danish. Tart donut fruitcake. Toffee candy danish chocolate danish toffee chocolate bar. Ice cream chocolate cake gingerbread. Brownie tootsie roll cotton candy cookie bear claw cheesecake cupcake lollipop apple pie.",
-                ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
-                InStock = true,
-                PieName = "Apple pie",
-                Price = 20.95
-            };
-
-            BindData(pie);
+            BindData(p);
         }
 
         private void BindData(Pie pie)
@@ -32,6 +21,11 @@ namespace PieShop
             DescriptionLabel.Text = pie.Description;
             PriceLabel.Text = pie.Price.ToString("c");
             InStockLabel.Text = pie.InStock ? "In stock" : "Not in stock";
+        }
+
+        private void AddToBasketButton_OnClicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Success", "Added to your basket!", "Done");
         }
     }
 }

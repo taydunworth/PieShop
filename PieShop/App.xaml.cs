@@ -10,14 +10,12 @@ namespace PieShop
         {
             InitializeComponent();
 
-            var alreadyRegistered = true;
+            var alreadyRegistered = false;
 
             if (alreadyRegistered)
                 MainPage = new MainView();
             else
                 MainPage = new NavigationPage(new LoginView());
-
-
         }
 
         protected override void OnStart()

@@ -7,51 +7,54 @@
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
     </ContentPage.Padding>
-    <StackLayout Margin="20">
-        <Image Source="bethanylogo.png"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               HeightRequest="100" />
-        <Label Text="Pie Details"
-               HorizontalTextAlignment="Center"
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"></ColumnDefinition>
+            <ColumnDefinition Width=".6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="PieNameLabel"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
                FontSize="Large"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+        <Image x:Name="PieImage"
+               Grid.Row="1"
+               Grid.ColumnSpan="2"
+               Margin="10"
+               WidthRequest="200"
+               HeightRequest="200"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <Label x:Name="PriceLabel"
                FontAttributes="Bold"
-               Margin="0, 20, 0, 0"/>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Image x:Name="PieImage" 
-                   Grid.Row="0" 
-                   Grid.Column="0"
-                   Grid.RowSpan="4"
-                   Margin="10" 
-                   WidthRequest="200" 
-                   HeightRequest="200" 
-                   VerticalOptions="Center" />
-            <Label x:Name="PieNameLabel" 
-                   Grid.Row="0" 
-                   Grid.Column="1" 
-                   FontSize="Medium" />
-            <Label x:Name="PriceLabel" 
-                   FontAttributes="Bold" 
-                   Grid.Row="1" 
-                   Grid.Column="1" />
-            <Label x:Name="InStockLabel" 
-                   Grid.Row="2" 
-                   Grid.Column="1" />
-            <Label x:Name="DescriptionLabel" 
-                   FontSize="Small" 
-                   Grid.Row="3"
-                   Grid.Column="1" />
-        </Grid>
-    </StackLayout>
+               Grid.Row="2" />
+        <Label x:Name="InStockLabel"
+               Grid.Row="2"
+               Grid.Column="1"
+               HorizontalOptions="End" />
+        <Label x:Name="DescriptionLabel"
+               FontSize="Small"
+               Grid.Row="3"
+               Grid.ColumnSpan="2" />
+        <Button x:Name="AddToBasketButton"
+                Clicked="AddToBasketButton_OnClicked"
+                Text="Add to Basket"
+                Grid.Row="4" 
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center" 
+                VerticalOptions="Start"
+                BackgroundColor="#22cfa7"
+                Padding="40, 10"
+                TextColor="#fff"
+                FontSize="Large" />
+    </Grid>
 </ContentPage>

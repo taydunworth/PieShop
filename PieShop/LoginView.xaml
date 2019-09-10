@@ -68,6 +68,8 @@
                 Padding="40, 10"
                 Margin="20"
                 TextColor="#fff"
-                FontSize="Large"/>
+                FontSize="Large"
+                x:Name="LoginButton"
+                Clicked="LoginButton_OnClicked" />
     </Grid>
 </ContentPage>

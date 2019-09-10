@@ -97,5 +97,11 @@ namespace PieShop
 
             PiesListView.ItemsSource = pies;
         }
+
+        private async void PiesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedPie = e.SelectedItem as Pie;
+            await this.Navigation.PushAsync(new PieDetailView(selectedPie));
+        }
     }
 }

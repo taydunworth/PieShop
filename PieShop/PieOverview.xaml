@@ -5,7 +5,8 @@
     x:Class="PieShop.PieOverview">
     <ListView x:Name="PiesListView"
               VerticalOptions="FillAndExpand"
-              CachingStrategy="RecycleElement">
+              CachingStrategy="RecycleElement"
+              ItemSelected="PiesListView_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

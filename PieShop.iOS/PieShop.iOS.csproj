@@ -139,5 +139,6 @@
     <BundleResource Include="Resources\bethanylogo.png" />
     <BundleResource Include="Resources\patternwide.png" />
     <BundleResource Include="Resources\pie.png" />
+    <BundleResource Include="Resources\settings.png" />
   </ItemGroup>
 </Project>
