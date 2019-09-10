@@ -2,8 +2,96 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PieShop.SettingsView">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    x:Class="PieShop.SettingsView"
+    BackgroundImageSource="patternwide.png">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
+    </ContentPage.Padding>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Text="Settings"
+               Grid.Row="0"
+               Grid.Column="0"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Preferred Language"
+               Grid.Row="1"
+               Grid.Column="0"
+               FontSize="Medium"
+               FontAttributes="Bold" />
+        <Picker x:Name="LanguagePicker"
+                Grid.Row="2"
+                Grid.Column="0"
+                Title="Select Your Language"
+                SelectedIndexChanged="LanguagePicker_OnSelectedIndexChanged">
+        </Picker>
+        <Label x:Name="SelectedLanguageLabel"
+               Grid.Row="3"
+               Grid.Column="0" />
+
+
+        <Label Text="Monthly Budget"
+               Grid.Row="4"
+               Grid.Column="0"
+               FontSize="Medium"
+               FontAttributes="Bold" />
+        <Slider x:Name="PieBudgetSlider"
+                Grid.Row="5"
+                Grid.Column="0"
+                Minimum="0"
+                Value="100"
+                Maximum="1000"
+                ValueChanged="PieBudgetSlider_OnValueChanged" />
+        <Label x:Name="PieBudgetLabel"
+               Grid.Row="6"
+               Grid.Column="0" />
+
+        <Label Text="Maximum Pies Per Month"
+               Grid.Row="7"
+               Grid.Column="0"
+               FontSize="Medium"
+               FontAttributes="Bold" />
+        <Stepper x:Name="MaxPieStepper"
+                Grid.Row="8"
+                Grid.Column="0"
+                Maximum="10"
+                 HorizontalOptions="Center" 
+                ValueChanged="MaxPieStepper_OnValueChanged" />
+        <Label x:Name="MaxPieLabel"
+               Grid.Row="9"
+               Grid.Column="0" />
+
+        <Button Text="Save Settings"
+            Grid.Row="10"
+            Grid.Column="0"
+            HorizontalOptions="Center" 
+            VerticalOptions="Start"
+            BackgroundColor="#22cfa7"
+            Padding="40, 10"
+            TextColor="#fff"
+            FontSize="Large"
+            Clicked="SaveSettingsButton_OnClicked"
+            x:Name="SaveSettingsButton" />
+
+        <ActivityIndicator x:Name="SavingActivityIndicator" 
+                           Grid.Row="11" 
+                           Color="#22cfa7" IsRunning="False" />
+    </Grid>
 </ContentPage>

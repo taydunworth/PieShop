@@ -4,72 +4,73 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="PieShop.ContactView"
     BackgroundImageSource="patternwide.png">
-    <ContentPage.Content>
-        <Grid VerticalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="200"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Image Source="bethanylogo.png"
-               Grid.Row="0"
-               Grid.Column="0"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               HeightRequest="200"
-               Margin="10" />
-            <Label Text="Send Us a Message"
-                   Grid.Row="1"
-                   Grid.Column="0"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   FontSize="Large"
-                   FontAttributes="Bold" />
-            <Editor x:Name="MessageEditor"
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    HeightRequest="200"
-                    TextColor="#000"
-                    FontSize="Small"
-                    IsSpellCheckEnabled="True"
-                    MaxLength="500"
-                    BackgroundColor="#fff"
-                    Margin="20">
-                <Editor.Keyboard>
-                    <Keyboard x:FactoryMethod="Create">
-                        <x:Arguments>
-                            <KeyboardFlags>Suggestions, Spellcheck</KeyboardFlags>
-                        </x:Arguments>
-                    </Keyboard>
-                </Editor.Keyboard>
-            </Editor>
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Center"
-                         Grid.Row="3"
-                         Grid.Column="0">
-                <Label Text="Would you like to be contacted?"
-                       VerticalOptions="Center"/>
-                <Switch x:Name="ContactMeSwitch"
-                        Toggled="ContactMeSwitch_OnToggled"
-                        VerticalOptions="Center"/>
-            </StackLayout>
-            <Button Text="Send Message"
-                Grid.Row="4"
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
+    </ContentPage.Padding>
+    <Grid VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="bethanylogo.png"
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            HeightRequest="200"
+            Margin="10" />
+        <Label Text="Send Us a Message"
+                Grid.Row="1"
                 Grid.Column="0"
-                HorizontalOptions="Center" 
-                VerticalOptions="Start"
-                BackgroundColor="#22cfa7"
-                Padding="40, 10"
-                Margin="20"
-                TextColor="#fff"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
                 FontSize="Large"
-                Clicked="SendMessageButton_OnClicked"
-                x:Name="SendMessageButton" />
-        </Grid>
-    </ContentPage.Content>
+                FontAttributes="Bold" />
+        <Editor x:Name="MessageEditor"
+                Grid.Row="2"
+                Grid.Column="0"
+                HeightRequest="200"
+                TextColor="#000"
+                FontSize="Small"
+                IsSpellCheckEnabled="True"
+                MaxLength="500"
+                BackgroundColor="#fff"
+                Margin="20">
+            <Editor.Keyboard>
+                <Keyboard x:FactoryMethod="Create">
+                    <x:Arguments>
+                        <KeyboardFlags>Suggestions, Spellcheck</KeyboardFlags>
+                    </x:Arguments>
+                </Keyboard>
+            </Editor.Keyboard>
+        </Editor>
+        <StackLayout Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Grid.Row="3"
+                        Grid.Column="0">
+            <Label Text="Would you like to be contacted?"
+                    VerticalOptions="Center"/>
+            <Switch x:Name="ContactMeSwitch"
+                    Toggled="ContactMeSwitch_OnToggled"
+                    VerticalOptions="Center"/>
+        </StackLayout>
+        <Button Text="Send Message"
+            Grid.Row="4"
+            Grid.Column="0"
+            HorizontalOptions="Center" 
+            VerticalOptions="Start"
+            BackgroundColor="#22cfa7"
+            Padding="40, 10"
+            Margin="20"
+            TextColor="#fff"
+            FontSize="Large"
+            Clicked="SendMessageButton_OnClicked"
+            x:Name="SendMessageButton" />
+    </Grid>
 </ContentPage>
