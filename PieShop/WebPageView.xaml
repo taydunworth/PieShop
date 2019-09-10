@@ -2,8 +2,16 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PieShop.WebPageView">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    x:Class="PieShop.WebPageView"
+    BackgroundImageSource="patternwide.png">
+    <StackLayout Margin="20">
+        <Label Text="See Our Reviews"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+        <WebView Source="https://www.google.com"
+                 HeightRequest="500"
+                 WidthRequest="500" />
+    </StackLayout>
 </ContentPage>

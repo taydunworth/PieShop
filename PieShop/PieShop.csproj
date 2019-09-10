@@ -13,4 +13,12 @@
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="WebPageView.xaml" />
+    <EmbeddedResource Remove="PieDetailView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="WebPageView.xaml.cs" />
+    <Compile Remove="PieDetailView.xaml.cs" />
+  </ItemGroup>
 </Project>
